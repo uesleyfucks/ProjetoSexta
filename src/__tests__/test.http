@@ -1,0 +1,35 @@
+### Listar
+GET http://localhost:4321/usuario/listar-usuario
+### BuscarPorId
+GET http://localhost:4321/usuario/listar-usuario/608fdc4a8680f93be870e98a
+
+### Cadastrar Requisisão correta
+POST http://localhost:4321/usuario/cadastrar-usuario
+Content-Type: application/json
+
+{
+    "username": "testeteste3",
+    "senha": "00201010"
+}
+
+### Cadastrar Requisisão com erro
+POST http://localhost:4321/usuario/cadastrar-usuario
+Content-Type: application/json
+
+{
+    "username": "testeteste",
+    "senha": "00201010"
+}
+
+### Deletar
+DELETE http://localhost:4321/usuario/deletar-usuario/608fdd67fcb84342087089f1
+
+### Editar
+PUT http://localhost:4321/usuario/editar-usuario/608fdc4a8680f93be870e98a
+Content-Type: application/json
+
+{
+    "username": "testeEditado",
+    "senha": "00201010"
+}
+
