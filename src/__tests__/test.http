@@ -1,5 +1,7 @@
+//-------------USUARIO-------------
 ### Listar
 GET http://localhost:4321/usuario/listar-usuario
+
 ### BuscarPorId
 GET http://localhost:4321/usuario/listar-usuario/608fdc4a8680f93be870e98a
 
@@ -33,3 +35,48 @@ Content-Type: application/json
     "senha": "00201010"
 }
 
+//------------RECEITA-------------
+### Listar
+GET http://localhost:4321/receita/listar-receita
+
+### BuscarPorId
+GET http://localhost:4321/receita/listar-receita/uvhgvhgvhg
+
+### Cadastrar Requisisão correta
+POST http://localhost:4321/receita/cadastrar-receita
+Content-Type: application/json
+
+{
+    "nomeReceita": "teste1",
+    "ingrediente": "teste",
+    "modoPreparo": "teste",
+    "tempoPreparo": 40,
+    "rendimento": 5
+}
+
+### Cadastrar Requisisão com erro
+POST http://localhost:4321/receita/cadastrar-receita
+Content-Type: application/json
+
+{
+    "nomeReceita": "teste2",
+    "ingrediente": "teste2",
+    "modoPreparo": "teste2",
+    "tempoPreparo": 40,
+    "rendimento": 5
+}
+
+### Deletar
+DELETE http://localhost:4321/receita/deletar-receita/cfcgfch
+
+### Editar
+PUT http://localhost:4321/receita/editar-receita/fcjfcj
+Content-Type: application/json
+
+{
+    "nomeReceita": "testeEditado",
+    "ingrediente": "testeEditado",
+    "modoPreparo": "testeEditado",
+    "tempoPreparo": 40,
+    "rendimento": 5
+}
