@@ -5,49 +5,47 @@ GET http://localhost:4321/usuario/listar-usuario
 ### BuscarPorId
 GET http://localhost:4321/usuario/listar-usuario/608fdc4a8680f93be870e98a
 
-### Cadastrar Requisisão correta
+### Cadastrar Usuario
 POST http://localhost:4321/usuario/cadastrar-usuario
 Content-Type: application/json
 
 {
-    "username": "testeteste3",
-    "senha": "00201010"
-}
-
-### Cadastrar Requisisão com erro
-POST http://localhost:4321/usuario/cadastrar-usuario
-Content-Type: application/json
-
-{
-    "username": "testeteste",
-    "senha": "00201010"
+    "username": "teste1",
+    "senha": "00201010",
+    "favoritos": []
 }
 
 ### Deletar
 DELETE http://localhost:4321/usuario/deletar-usuario/608fdd67fcb84342087089f1
 
 ### Editar
-PUT http://localhost:4321/usuario/editar-usuario/608fdc4a8680f93be870e98a
+PUT http://localhost:4321/usuario/editar-usuario/6091e7724f18793f5c26a1ec
 Content-Type: application/json
 
 {
     "username": "testeEditado",
-    "senha": "00201010"
+    "senha": "00201010",
+    "favoritos": []
 }
+
+### Adicionar a Favoritos
+POST http://localhost:4321/usuario/adicionar-favorito/6091e5e2ac125510bc088f05/6091e7724f18793f5c26a1ec
+
+
 
 //------------RECEITA-------------
 ### Listar
 GET http://localhost:4321/receita/listar-receita
 
 ### BuscarPorId
-GET http://localhost:4321/receita/listar-receita/uvhgvhgvhg
+GET http://localhost:4321/receita/listar-receita/6091e5e2ac125510bc088f05
 
 ### Cadastrar Requisisão correta
 POST http://localhost:4321/receita/cadastrar-receita
 Content-Type: application/json
 
 {
-    "nomeReceita": "teste1",
+    "nomeReceita": "teste2",
     "ingrediente": "teste",
     "modoPreparo": "teste",
     "tempoPreparo": 40,
@@ -67,10 +65,10 @@ Content-Type: application/json
 }
 
 ### Deletar
-DELETE http://localhost:4321/receita/deletar-receita/cfcgfch
+DELETE http://localhost:4321/receita/deletar-receita/6091e5f5ac125510bc088f06
 
 ### Editar
-PUT http://localhost:4321/receita/editar-receita/fcjfcj
+PUT http://localhost:4321/receita/editar-receita/6091e5e2ac125510bc088f05
 Content-Type: application/json
 
 {

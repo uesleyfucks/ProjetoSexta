@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import usuarioSchema from "../models/UsuarioSchema";
+import receitaSchema from "../models/ReceitaSchema";
 
 class UsuarioController {
   //------USUARIO------
@@ -74,5 +75,30 @@ class UsuarioController {
       response.status(400).json(error);
     }
   }
+
+  async adicionarFavorito(request: Request, response: Response) {
+    const { id } = request.params;
+    const { idUsuario } = request.params;
+
+    try {
+      const receita = await receitaSchema.findOne({ _id: id });
+      if (receita === null) {
+        response.status(404).json({ msg: "A receita não existe!" });
+      } else {
+        response.status(200);
+        const addReceita = await usuarioSchema.findOneAndUpdate(
+          { _id: idUsuario },
+          { $push: { favoritos: [receita] } },
+          { upsert: true }
+        );
+        response.json(addReceita);
+        //console.log(receita);
+        //console.log(addReceita);
+      }
+    } catch (error) {
+      response.status(400).json(error);
+    }
+  }
+  
 }
 export { UsuarioController };

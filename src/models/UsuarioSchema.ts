@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-
+ 
 const usuarioSchema = new Schema(
   {
     username: {
@@ -10,6 +10,7 @@ const usuarioSchema = new Schema(
       type: String,
       required: [true, "O campo SENHA é obrigatório!!!"],
     },
+    favoritos : [],
   },
   {
     timestamps: true,
