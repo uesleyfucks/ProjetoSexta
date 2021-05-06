@@ -10,8 +10,9 @@ export {router};
 
 //---------Usuario--Receita----------
 
-//Adicionar favorito
+//Favoritos
 router.post("/usuario/adicionar-favorito/:id/:idUsuario", usuarioController.adicionarFavorito);
+router.post("/usuario/remover-favorito/:id/:idUsuario", usuarioController.removerFavorito);
 
 //Listar
 router.get("/usuario/listar-usuario", usuarioController.listar);
