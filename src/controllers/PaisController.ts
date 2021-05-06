@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import paisSchema from "../models/PaisSchema";
 
 class PaisController {
+    
 
     //País
 
