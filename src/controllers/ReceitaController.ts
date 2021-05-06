@@ -32,7 +32,7 @@ class ReceitaController {
         nomeReceita: nomeReceita,
     });
     if (validacaoNomeReceita != null) {
-      response.status(666).json({ msg: "ESSA RECEITA JÁ EXISTE!!" });
+      response.status(409).json({ msg: "ESSA RECEITA JÁ EXISTE!!" });
     } else {
       try {
         await receitaSchema.create(novaReceita);
