@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import usuarioSchema from "../models/UsuarioSchema";
 import receitaSchema from "../models/ReceitaSchema";
-import paisSchema from "../models/PaisSchema";
+//import paisSchema from "../models/PaisSchema";
 
 class UsuarioController {
   //------USUARIO------

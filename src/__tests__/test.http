@@ -3,24 +3,24 @@
 GET http://localhost:4321/usuario/listar-usuario
 
 ### BuscarPorId
-GET http://localhost:4321/usuario/listar-usuario/6091e76c4f18793f5c26a1eb
+GET http://localhost:4321/usuario/listar-usuario/6093f1ff5075d121b07ffde0
 
 ### Cadastrar Usuario
 POST http://localhost:4321/usuario/cadastrar-usuario
 Content-Type: application/json
 
 {
-    "email": "teste@testa",
-    "username": "teste1aaaa",
+    "email": "teste@aaaaa",
+    "username": "aaaaaa",
     "senha": "00201010",
     "favoritos": []
 }
 
 ### Deletar
-DELETE http://localhost:4321/usuario/deletar-usuario/609345a782b7332b04cf8166
+DELETE http://localhost:4321/usuario/deletar-usuario/6093f2495075d121b07ffde1
 
 ### Editar
-PUT http://localhost:4321/usuario/editar-usuario/6093468b2e69514f04c97ca1
+PUT http://localhost:4321/usuario/editar-usuario/6093f1ff5075d121b07ffde0
 Content-Type: application/json
 
 {
@@ -31,10 +31,10 @@ Content-Type: application/json
 }
 
 ### Adicionar a Favoritos
-POST http://localhost:4321/usuario/adicionar-favorito/609345ec82b7332b04cf8168/609345a782b7332b04cf8166
+POST http://localhost:4321/usuario/adicionar-favorito/6093f3455075d121b07ffde3/6093f1ff5075d121b07ffde0
 
 ### Remover Favoritos
-POST http://localhost:4321/usuario/remover-favorito/6091e5e2ac125510bc088f05/6091e7724f18793f5c26a1ec
+POST http://localhost:4321/usuario/remover-favorito/6093f3455075d121b07ffde3/6093f1ff5075d121b07ffde0
 
 
 
@@ -43,37 +43,25 @@ POST http://localhost:4321/usuario/remover-favorito/6091e5e2ac125510bc088f05/609
 GET http://localhost:4321/receita/listar-receita
 
 ### BuscarPorId
-GET http://localhost:4321/receita/listar-receita/6091e5e2ac125510bc088f05
+GET http://localhost:4321/receita/listar-receita/6093f2f25075d121b07ffde2
 
 ### Cadastrar Requisisão correta
 POST http://localhost:4321/receita/cadastrar-receita
 Content-Type: application/json
 
 {
-    "nomeReceita": "teste2",
+    "nomeReceita": "Feijoada",
     "ingrediente": "teste",
     "modoPreparo": "teste",
     "tempoPreparo": 40,
     "rendimento": 5
 }
 
-### Cadastrar Requisisão com erro
-POST http://localhost:4321/receita/cadastrar-receita
-Content-Type: application/json
-
-{
-    "nomeReceita": "teste2",
-    "ingrediente": "teste2",
-    "modoPreparo": "teste2",
-    "tempoPreparo": 40,
-    "rendimento": 5
-}
-
 ### Deletar
-DELETE http://localhost:4321/receita/deletar-receita/6091e5f5ac125510bc088f06
+DELETE http://localhost:4321/receita/deletar-receita/6093f2f25075d121b07ffde2
 
 ### Editar
-PUT http://localhost:4321/receita/editar-receita/6091e5e2ac125510bc088f05
+PUT http://localhost:4321/receita/editar-receita/6093f3455075d121b07ffde3
 Content-Type: application/json
 
 {
@@ -83,3 +71,34 @@ Content-Type: application/json
     "tempoPreparo": 40,
     "rendimento": 5
 }
+
+//------------PAIS-------------
+### Listar
+GET http://localhost:4321/pais/listar-pais
+
+### BuscarPorId
+GET http://localhost:4321/pais/listar-pais/6093f2f25075d121b07ffde2
+
+### Cadastrar Requisisão correta
+POST http://localhost:4321/pais/cadastrar-pais
+Content-Type: application/json
+
+{
+    "nomePais": "EUA",
+    "receitas": []
+}
+
+### Deletar
+DELETE http://localhost:4321/pais/deletar-pais/6093f2f25075d121b07ffde2
+
+### Editar
+PUT http://localhost:4321/pais/editar-pais/6093f8c1b39e7c482c899ffb
+Content-Type: application/json
+
+{
+    "nomePais": "editado",
+    "receitas": []
+}
+
+### Cadastrar RECEITA EM PAIS
+POST http://localhost:4321/pais/cadastrar-receita/6093f908b39e7c482c899ffd/6093f8c1b39e7c482c899ffb

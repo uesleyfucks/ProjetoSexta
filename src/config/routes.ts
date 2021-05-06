@@ -30,6 +30,8 @@ router.get("/pais/listar-pais/:id", paisController.buscarPorId);
 router.post("/usuario/cadastrar-usuario", usuarioController.cadastrar);
 router.post("/receita/cadastrar-receita", receitaController.cadastrar);
 router.post("/pais/cadastrar-pais", paisController.cadastrar);
+//receita dentro de pais
+router.post("/pais/cadastrar-receita/:id/:idPais", paisController.cadastrarReceita);
 
 //Editar
 router.put("/usuario/editar-usuario/:id", usuarioController.editar);
