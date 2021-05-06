@@ -1,15 +1,15 @@
-import express from "express";
+var express = require('express');
 import {router} from "./config/routes";
-import {mongoose} from "./config/database";
+// import {mongoose} from "./config/database";
 
-const app = express();
-const db = mongoose;
+var app = express();
+// const db = mongoose;
 
 console.clear();
 
 //Configuração
 app.use(express.json());
-app.use(router);
+// app.use(router);
 
 app.listen(4321, () => {
     console.log("O servidor esta rodando na porta 4321")

@@ -1,35 +1,35 @@
-import {Router} from "express";
-import {UsuarioController} from "../controllers/UsuarioController";
-import {ReceitaController} from "../controllers/ReceitaController";
+var router = require('express');
+// import {UsuarioController} from "../controllers/UsuarioController";
+// import {ReceitaController} from "../controllers/ReceitaController";
 
-const router = Router();
-const usuarioController = new UsuarioController();
-const receitaController = new ReceitaController();
+// //const router = Router();
+// const usuarioController = new UsuarioController();
+// const receitaController = new ReceitaController();
 
-export {router};
+ export {router};
 
-//---------Usuario--Receita----------
+// //---------Usuario--Receita----------
 
-//Adicionar favorito
-router.post("/usuario/adicionar-favorito/:id/:idUsuario", usuarioController.adicionarFavorito);
+// //Adicionar favorito
+// router.post("/usuario/adicionar-favorito/:id/:idUsuario", usuarioController.adicionarFavorito);
 
-//Listar
-router.get("/usuario/listar-usuario", usuarioController.listar);
-router.get("/receita/listar-receita", receitaController.listar);
+// //Listar
+// router.get("/usuario/listar-usuario", usuarioController.listar);
+// router.get("/receita/listar-receita", receitaController.listar);
 
-//Buscar Por ID
-router.get("/usuario/listar-usuario/:id", usuarioController.buscarPorId);
-router.get("/receita/listar-receita/:id", receitaController.buscarPorId);
+// //Buscar Por ID
+// router.get("/usuario/listar-usuario/:id", usuarioController.buscarPorId);
+// router.get("/receita/listar-receita/:id", receitaController.buscarPorId);
 
-//Cadastrar
-router.post("/usuario/cadastrar-usuario", usuarioController.cadastrar);
-router.post("/receita/cadastrar-receita", receitaController.cadastrar);
+// //Cadastrar
+// router.post("/usuario/cadastrar-usuario", usuarioController.cadastrar);
+// router.post("/receita/cadastrar-receita", receitaController.cadastrar);
 
-//Editar
-router.put("/usuario/editar-usuario/:id", usuarioController.editar);
-router.put("/receita/editar-receita/:id", receitaController.editar);
+// //Editar
+// router.put("/usuario/editar-usuario/:id", usuarioController.editar);
+// router.put("/receita/editar-receita/:id", receitaController.editar);
 
-//Deletar
-router.delete("/usuario/deletar-usuario/:id", usuarioController.deletar);
-router.delete("/receita/deletar-receita/:id", receitaController.deletar);
+// //Deletar
+// router.delete("/usuario/deletar-usuario/:id", usuarioController.deletar);
+// router.delete("/receita/deletar-receita/:id", receitaController.deletar);
 
