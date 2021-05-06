@@ -17,10 +17,12 @@ const receitaSchema = new Schema(
     tempoPreparo: {
        type: Number,
        required: [true, "O campo TEMPOPREPARO é obrigatório!!!"],
+       min: [0]
     },
     rendimento: {
       type: Number,
       required: [true, "O campo RENDIMENTO é obrigatório!!!"],
+      min: [1, "Rendimento mínimo de 1 porção"]
     },
   },
   {
