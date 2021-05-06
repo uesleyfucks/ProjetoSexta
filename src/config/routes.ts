@@ -42,3 +42,5 @@ router.put("/pais/editar-pais/:id", paisController.editar);
 router.delete("/usuario/deletar-usuario/:id", usuarioController.deletar);
 router.delete("/receita/deletar-receita/:id", receitaController.deletar);
 router.delete("/pais/deletar-pais/:id", paisController.deletar);
+//receita dentro de pais
+router.post("/pais/remover-receita/:id/:idPais", paisController.removerReceita);

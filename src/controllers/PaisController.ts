@@ -82,8 +82,30 @@ class PaisController {
         response.status(200);
         const addReceita = await paisSchema.findOneAndUpdate(
           { _id: idPais },
-          { $push: { receitas: [receita] } },
-          { upsert: true }
+          { $addToSet: { receitas: [receita] } },
+        );
+        response.json(addReceita);
+        //console.log(receita);
+        //console.log(addReceita);
+      }
+    } catch (error) {
+      response.status(400).json(error);
+    }
+  }
+
+  async removerReceita(request: Request, response: Response) {
+    const { id } = request.params;
+    const { idPais } = request.params;
+
+    try {
+      const receita = await receitaSchema.findOne({ _id: id });
+      if (receita === null) {
+        response.status(404).json({ msg: "A receita não existe!" });
+      } else {
+        response.status(200);
+        const addReceita = await paisSchema.findOneAndUpdate(
+          { _id: idPais },
+          { $pullAll: { receitas: [receita] } }
         );
         response.json(addReceita);
         //console.log(receita);

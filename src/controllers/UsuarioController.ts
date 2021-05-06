@@ -95,7 +95,7 @@ class UsuarioController {
         response.status(200);
         const addReceita = await usuarioSchema.findOneAndUpdate(
           { _id: idUsuario },
-          { $push: { favoritos: [receita] } },
+          { $addToSet: { favoritos: [receita] } },
           { upsert: true }
         );
         response.json(addReceita);

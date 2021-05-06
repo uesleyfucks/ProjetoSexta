@@ -31,10 +31,10 @@ Content-Type: application/json
 }
 
 ### Adicionar a Favoritos
-POST http://localhost:4321/usuario/adicionar-favorito/6093f3455075d121b07ffde3/6093f1ff5075d121b07ffde0
+POST http://localhost:4321/usuario/adicionar-favorito/6093f908b39e7c482c899ffd/6093f3455075d121b07ffde3
 
 ### Remover Favoritos
-POST http://localhost:4321/usuario/remover-favorito/6093f3455075d121b07ffde3/6093f1ff5075d121b07ffde0
+POST http://localhost:4321/usuario/remover-favorito/6093f3455075d121b07ffde3/6093f3455075d121b07ffde3
 
 
 
@@ -101,4 +101,7 @@ Content-Type: application/json
 }
 
 ### Cadastrar RECEITA EM PAIS
-POST http://localhost:4321/pais/cadastrar-receita/6093f908b39e7c482c899ffd/6093f8c1b39e7c482c899ffb
+POST http://localhost:4321/pais/cadastrar-receita/6093f34f5075d121b07ffde4/6093f8d1b39e7c482c899ffc
+
+### REMOVER RECEITA EM PAIS
+POST http://localhost:4321/pais/remover-receita/6093f34f5075d121b07ffde4/6093f8d1b39e7c482c899ffc
