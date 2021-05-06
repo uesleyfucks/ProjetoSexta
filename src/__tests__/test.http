@@ -3,33 +3,38 @@
 GET http://localhost:4321/usuario/listar-usuario
 
 ### BuscarPorId
-GET http://localhost:4321/usuario/listar-usuario/608fdc4a8680f93be870e98a
+GET http://localhost:4321/usuario/listar-usuario/6091e76c4f18793f5c26a1eb
 
 ### Cadastrar Usuario
 POST http://localhost:4321/usuario/cadastrar-usuario
 Content-Type: application/json
 
 {
-    "username": "teste1",
+    "email": "teste@testa",
+    "username": "teste1aaaa",
     "senha": "00201010",
     "favoritos": []
 }
 
 ### Deletar
-DELETE http://localhost:4321/usuario/deletar-usuario/608fdd67fcb84342087089f1
+DELETE http://localhost:4321/usuario/deletar-usuario/609345a782b7332b04cf8166
 
 ### Editar
-PUT http://localhost:4321/usuario/editar-usuario/6091e7724f18793f5c26a1ec
+PUT http://localhost:4321/usuario/editar-usuario/6093468b2e69514f04c97ca1
 Content-Type: application/json
 
 {
+    "email": "teste@editado",
     "username": "testeEditado",
     "senha": "00201010",
     "favoritos": []
 }
 
 ### Adicionar a Favoritos
-POST http://localhost:4321/usuario/adicionar-favorito/6091e5e2ac125510bc088f05/6091e7724f18793f5c26a1ec
+POST http://localhost:4321/usuario/adicionar-favorito/609345ec82b7332b04cf8168/609345a782b7332b04cf8166
+
+### Remover Favoritos
+POST http://localhost:4321/usuario/remover-favorito/6091e5e2ac125510bc088f05/6091e7724f18793f5c26a1ec
 
 
 

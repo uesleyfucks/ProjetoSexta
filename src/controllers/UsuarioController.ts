@@ -29,12 +29,17 @@ class UsuarioController {
   async cadastrar(request: Request, response: Response) {
     const novoUsuario = request.body;
     const { username } = request.body;
+    const { email } = request.body;
 
     const validacaoUsername = await usuarioSchema.findOne({
       username: username,
     });
-    if (validacaoUsername != null) {
-      response.status(666).json({ msg: "ESSE USUARIO JA EXISTE!!" });
+    const validacaoEmail = await usuarioSchema.findOne({
+      email: email,
+    });
+
+    if (validacaoUsername != null || validacaoEmail != null) {
+      response.status(409).json({ msg: "ESSE USUARIO OU EMAIL JA EXISTEM!!" });
     } else {
       try {
         await usuarioSchema.create(novoUsuario);
@@ -49,8 +54,8 @@ class UsuarioController {
   async deletar(request: Request, response: Response) {
     const { id } = request.params;
     try {
-      const username = await usuarioSchema.findOneAndDelete({ _id: id });
-      if (username === null) {
+      const usuario = await usuarioSchema.findOneAndDelete({ _id: id });
+      if (usuario === null) {
         response.status(404).json({ msg: "Esse usuario não existe!" });
       }
       response.status(200).json({ msg: "Usuario deletado com sucesso!!" });
@@ -61,22 +66,23 @@ class UsuarioController {
 
   async editar(request: Request, response: Response) {
     const { id } = request.params;
-    const { username, senha } = request.body;
+    const { email, username, senha } = request.body;
     try {
       const usuario = await usuarioSchema.findOneAndUpdate(
         { _id: id },
-        { username, senha }
+        { email, username, senha }
       );
       if (usuario === null) {
         response.status(404).json({ msg: "Esse usuario não existe!" });
       }
       response.status(200).json({ msg: "Usuario editado com sucesso!!" });
-      console.log({ username, senha });
+      console.log({ username, senha, email });
     } catch (error) {
       response.status(400).json(error);
     }
   }
 
+  //FAVORITOS
   async adicionarFavorito(request: Request, response: Response) {
     const { id } = request.params;
     const { idUsuario } = request.params;
@@ -100,6 +106,28 @@ class UsuarioController {
       response.status(400).json(error);
     }
   }
-  
+
+  async removerFavorito(request: Request, response: Response) {
+    const { id } = request.params;
+    const { idUsuario } = request.params;
+
+    try {
+      const receita = await receitaSchema.findOne({ _id: id });
+      if (receita === null) {
+        response.status(404).json({ msg: "A receita não existe!" });
+      } else {
+        response.status(200);
+        const addReceita = await usuarioSchema.findOneAndUpdate(
+          { _id: idUsuario },
+          { $pullAll: { favoritos: [receita] } }
+        );
+        response.json(addReceita);
+        //console.log(receita);
+        //console.log(addReceita);
+      }
+    } catch (error) {
+      response.status(400).json(error);
+    }
+  }
 }
 export { UsuarioController };
