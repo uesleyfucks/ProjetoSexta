@@ -108,8 +108,6 @@ class PaisController {
           { $pullAll: { receitas: [receita] } }
         );
         response.json(addReceita);
-        //console.log(receita);
-        //console.log(addReceita);
       }
     } catch (error) {
       response.status(400).json(error);

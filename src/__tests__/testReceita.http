@@ -1,0 +1,33 @@
+//------------RECEITA-------------
+### Listar
+GET http://localhost:4321/receita/listar-receita
+
+### BuscarPorId
+GET http://localhost:4321/receita/listar-receita/609486f81990314a687cc673
+
+### Cadastrar Requisisão correta
+POST http://localhost:4321/receita/cadastrar-receita
+Content-Type: application/json
+
+{
+    "nomeReceita": "Feijoada",
+    "ingrediente": "teste",
+    "modoPreparo": "teste",
+    "tempoPreparo": 40,
+    "rendimento": 5
+}
+
+### Deletar
+DELETE http://localhost:4321/receita/deletar-receita/609486f81990314a687cc673
+
+### Editar
+PUT http://localhost:4321/receita/editar-receita/6094871d1990314a687cc674
+Content-Type: application/json
+
+{
+    "nomeReceita": "testeEditado",
+    "ingrediente": "testeEditado",
+    "modoPreparo": "testeEditado",
+    "tempoPreparo": 40,
+    "rendimento": 5
+}

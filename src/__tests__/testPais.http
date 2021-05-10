@@ -1,0 +1,33 @@
+//------------PAIS-------------
+### Listar
+GET http://localhost:4321/pais/listar-pais
+
+### BuscarPorId
+GET http://localhost:4321/pais/listar-pais/6093f2f25075d121b07ffde2
+
+### Cadastrar Requisisão correta
+POST http://localhost:4321/pais/cadastrar-pais
+Content-Type: application/json
+
+{
+    "nomePais": "BRASIL",
+    "receitas": []
+}
+
+### Deletar
+DELETE http://localhost:4321/pais/deletar-pais/6093f2f25075d121b07ffde2
+
+### Editar
+PUT http://localhost:4321/pais/editar-pais/609487641990314a687cc675
+Content-Type: application/json
+
+{
+    "nomePais": "Brasil",
+    "receitas": []
+}
+
+### Cadastrar RECEITA EM PAIS
+POST http://localhost:4321/pais/cadastrar-receita/6095368a44ee3d3744ec0b28/609536bd44ee3d3744ec0b29
+
+### REMOVER RECEITA EM PAIS
+POST http://localhost:4321/pais/remover-receita/609486f51990314a687cc672/609487641990314a687cc675

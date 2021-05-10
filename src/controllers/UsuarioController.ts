@@ -43,7 +43,6 @@ class UsuarioController {
     } else {
       try {
         await usuarioSchema.create(novoUsuario);
-        //console.log(novaCarta);
         response.status(201).json(novoUsuario);
       } catch (error) {
         response.status(400).json(error);
@@ -98,7 +97,8 @@ class UsuarioController {
           { $addToSet: { favoritos: [receita] } },
           { upsert: true }
         );
-        response.json(addReceita);
+        response.status(201).json(addReceita);
+        //response.status(201).json({ msg: "Receita adicionada a favoritos com sucesso!!" });
         //console.log(receita);
         //console.log(addReceita);
       }
@@ -121,7 +121,8 @@ class UsuarioController {
           { _id: idUsuario },
           { $pullAll: { favoritos: [receita] } }
         );
-        response.json(addReceita);
+        response.status(201).json(addReceita);
+        //response.status(201).json({ msg: "Receita removida de favoritos com sucesso!!" });
         //console.log(receita);
         //console.log(addReceita);
       }

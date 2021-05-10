@@ -1,0 +1,42 @@
+//-------------USUARIO-------------
+### Listar
+GET http://localhost:4321/usuario/listar-usuario
+
+### BuscarPorId
+GET http://localhost:4321/usuario/listar-usuario/6095366344ee3d3744ec0b27
+
+### Cadastrar Usuario
+POST http://localhost:4321/usuario/cadastrar-usuario
+Content-Type: application/json
+
+{
+    "email": "usuario@email",
+    "username": "teste2",
+    "senha": "00201010",
+    "favoritos": []
+}
+
+### Deletar
+DELETE http://localhost:4321/usuario/deletar-usuario/609486ba1990314a687cc671
+
+### Editar
+PUT http://localhost:4321/usuario/editar-usuario/6095366344ee3d3744ec0b27
+Content-Type: application/json
+
+{
+    "email": "teste@editado",
+    "username": "testeEditado",
+    "senha": "123456",
+    "favoritos": []
+}
+
+### Adicionar RECEITA a Favoritos
+POST http://localhost:4321/usuario/adicionar-favorito/6095368a44ee3d3744ec0b28/6095366344ee3d3744ec0b27
+
+### Remover RECEITA Favoritos
+POST http://localhost:4321/usuario/remover-favorito/609486f51990314a687cc672/609486721990314a687cc670
+
+
+
+
+
