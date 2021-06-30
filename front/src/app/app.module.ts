@@ -15,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {  MatGridListModule} from '@angular/material/grid-list';
+import { MatDividerModule} from '@angular/material/divider';
 
 
 import { HeaderComponent } from './components/template/header/header.component';
@@ -24,6 +26,12 @@ import { ContentComponent } from './components/template/content/content.componen
 import { ListarComponent } from './components/views/paises/listar/listar.component';
 import { CadastrarComponent } from './components/views/paises/cadastrar/cadastrar.component';
 
+import { UsuarioListarComponent } from './components/views/usuarios/listar/listar.component';
+import { UsuarioCadastrarComponent } from './components/views/usuarios/cadastrar/cadastrar.component';
+
+import { ReceitaListarComponent } from './components/views/receitas/listar/listar.component';
+import { ReceitaCadastrarComponent } from './components/views/receitas/cadastrar/cadastrar.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +39,12 @@ import { CadastrarComponent } from './components/views/paises/cadastrar/cadastra
     HeaderComponent,
     ContentComponent,
          ListarComponent,
-         CadastrarComponent
+         CadastrarComponent,
+         UsuarioListarComponent,
+         UsuarioCadastrarComponent,
+         ReceitaListarComponent,
+         ReceitaCadastrarComponent
+
   ],
   imports: [
     BrowserModule,
@@ -49,6 +62,9 @@ import { CadastrarComponent } from './components/views/paises/cadastrar/cadastra
     MatButtonModule,
     MatTableModule,
     MatSnackBarModule,
+    MatGridListModule,
+    MatDividerModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

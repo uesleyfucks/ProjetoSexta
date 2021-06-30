@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Receita } from 'src/app/models/Receita';
+import { ReceitaService } from 'src/app/services/receitas.service';
 
 @Component({
   selector: 'app-listar',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReceitaListarComponent implements OnInit {
 
-  constructor() { }
+  
+  receitas : Receita[] = [];
+
+  constructor(private service: ReceitaService) {
+    
+   }
 
   ngOnInit(): void {
+    this.service.listar().subscribe((receitas) => {
+      //console.log(paises);
+      this.receitas = receitas;
+    });
   }
 
 }

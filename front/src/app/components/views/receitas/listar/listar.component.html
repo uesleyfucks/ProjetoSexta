@@ -1,1 +1,23 @@
-<p>listar works!</p>
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let receita of receitas">
+    <mat-card class="receitas">
+        <mat-card-title> {{ receita.nomeReceita }} </mat-card-title>
+        <mat-card-subtitle>{{ receita.rendimento }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ receita.tempoPreparo }}</mat-card-subtitle>
+        <mat-card-content>
+          {{ receita.ingrediente }}
+        </mat-card-content>
+        <mat-card-content>
+          {{ receita.modoPreparo }}
+        </mat-card-content>
+        <mat-card-actions> 
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button> 
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>   
+  </mat-grid-list>
+
+  
+  
+  

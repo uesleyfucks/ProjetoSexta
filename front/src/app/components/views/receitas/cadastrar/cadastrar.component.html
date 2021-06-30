@@ -1,1 +1,55 @@
-<p>cadastrar works!</p>
+<mat-card>
+    <mat-card-title> Nova Receita </mat-card-title>
+    <mat-card-content>  
+        <div class="receita">
+          <mat-card>
+            <mat-card-content>
+              <div class="conteudo-receita">
+              <div class="conteudo-receita">                  
+                <mat-form-field>
+                  <mat-label for="nomeReceita">Nome da Receita</mat-label>
+                  <input matInput placeholder="nomeReceita" type="text" name="nomeReceita" [(ngModel)]="nomeReceita" />
+                </mat-form-field>
+              </div> 
+
+              <div class="conteudo-receita">                  
+                <mat-form-field>
+                  <mat-label for="ingrediente">Ingredientes</mat-label>
+                  <input matInput placeholder="ingrediente" type="text" name="ingrediente" [(ngModel)]="ingrediente" />
+                </mat-form-field>
+              </div> 
+
+              <div class="conteudo-receita">                  
+                <mat-form-field>
+                  <mat-label for="modoPreparo">Modo de Preparo</mat-label>
+                  <input matInput placeholder="modoPreparo" type="text" name="modoPreparo" [(ngModel)]="modoPreparo" />
+                </mat-form-field>
+              </div> 
+
+              <div class="conteudo-receita">                  
+                <mat-form-field>
+                  <mat-label for="tempoPreparo">Tempo de Preparo</mat-label>
+                  <input matInput placeholder="tempoPreparo" type="text" name="tempoPreparo" [(ngModel)]="tempoPreparo" />
+                </mat-form-field>
+              </div> 
+
+              <div class="conteudo-receita">                  
+                <mat-form-field>
+                  <mat-label for="rendimento">Rendimento</mat-label>
+                  <input matInput placeholder="rendimento" type="text" name="rendimento" [(ngModel)]="rendimento" />
+                </mat-form-field>
+              </div> 
+                    
+              </div>             
+            </mat-card-content>
+          </mat-card>
+        </div>             
+  
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="cadastrar()">Cadastrar</button>
+        <a mat-stroked-button routerLink="/receitas/listar"> Listar Receitas </a>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+  
+

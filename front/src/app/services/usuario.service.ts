@@ -1,23 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ListarComponent } from '../components/views/paises/listar/listar.component';
-import { Pais } from '../models/Pais';
+import { Usuario } from '../models/Usuario';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PaisService {
+export class UsuarioService {
 
   baseURL = "http://localhost:4321/";
 
 
   constructor(private http:HttpClient) { }
-    listar(): Observable<Pais[]>{
-      return this.http.get<Pais[]>(`${this.baseURL}pais/listar-pais/`);
+    listar(): Observable<Usuario[]>{
+      return this.http.get<Usuario[]>(`${this.baseURL}usuario/listar-usuario`);
     }
 
-    cadastrar(pais: Pais):Observable<Pais>{
-      return this.http.post<Pais>(`${this.baseURL}pais/cadastrar-pais/`, pais);
+    cadastrar(usuario: Usuario):Observable<Usuario>{
+      return this.http.post<Usuario>(`${this.baseURL}usuario/cadastrar-usuario/`, usuario);
     }
 }

@@ -1,1 +1,41 @@
-<p>cadastrar works!</p>
+<mat-card>
+    <mat-card-title> Novo Usuario </mat-card-title>
+    <mat-card-content>  
+        <div class="usuario">
+          <mat-card>
+            <mat-card-content>
+              <div class="conteudo-usuario">
+              <div class="conteudo-usuario">                  
+                <mat-form-field>
+                  <mat-label for="email">E-mail</mat-label>
+                  <input matInput placeholder="email" type="text" name="email" [(ngModel)]="email" />
+                </mat-form-field>
+              </div> 
+
+              <div class="conteudo-usuario">                  
+                <mat-form-field>
+                  <mat-label for="senha">Senha</mat-label>
+                  <input matInput placeholder="senha" type="text" name="senha" [(ngModel)]="senha" />
+                </mat-form-field>
+              </div> 
+
+              <div class="conteudo-usuario">                  
+                <mat-form-field>
+                  <mat-label for="username">Username</mat-label>
+                  <input matInput placeholder="username" type="text" name="username" [(ngModel)]="username" />
+                </mat-form-field>
+              </div> 
+                    
+              </div>             
+            </mat-card-content>
+          </mat-card>
+        </div>             
+  
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="cadastrar()">Cadastrar</button>
+        <a mat-stroked-button routerLink="/usuarios/listar"> Listar Usuarios </a>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+  
+
