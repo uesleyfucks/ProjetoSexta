@@ -14,6 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 import { HeaderComponent } from './components/template/header/header.component';
 //import { CadastrarComponent } from './components/views/cadastrar/cadastrar.component';
@@ -45,7 +47,8 @@ import { CadastrarComponent } from './components/views/paises/cadastrar/cadastra
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
