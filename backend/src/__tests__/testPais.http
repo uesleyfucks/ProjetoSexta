@@ -3,14 +3,14 @@
 GET http://localhost:4321/pais/listar-pais
 
 ### BuscarPorId
-GET http://localhost:4321/pais/listar-pais/6093f2f25075d121b07ffde2
+GET http://localhost:4321/pais/listar-pais/609536bd44ee3d3744ec0b29
 
 ### Cadastrar Requisisão correta
 POST http://localhost:4321/pais/cadastrar-pais
 Content-Type: application/json
 
 {
-    "nomePais": "BRASIL",
+    "nomePais": "Alemanha",
     "receitas": []
 }
 

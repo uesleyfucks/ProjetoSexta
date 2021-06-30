@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+    <mat-sidenav opened mode="side" fixedInViewport fixedTopGap="64">
+        <mat-list>
+            <a mat-list-item routerLink="">
+                <mat-icon matListIcon>home</mat-icon>
+                <span>Home</span>
+            </a>
+            <a mat-list-item routerLink="paises/cadastrar">
+                <mat-icon matListIcon>savings</mat-icon>
+                <span>Cadastrar Ciclo</span>
+            </a>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
