@@ -14,10 +14,10 @@ export class PaisService {
 
   constructor(private http:HttpClient) { }
     listar(): Observable<Pais[]>{
-      return this.http.get<Pais[]>(`${this.baseURL}paises/listar/`);
+      return this.http.get<Pais[]>(`${this.baseURL}pais/listar-pais/`);
     }
 
     cadastrar(pais: Pais):Observable<Pais>{
-      return this.http.post<Pais>(`${this.baseURL}paises/cadastrar/`, pais);
+      return this.http.post<Pais>(`${this.baseURL}pais/cadastrar-pais/`, pais);
     }
 }
