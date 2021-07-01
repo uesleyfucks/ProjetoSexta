@@ -36,7 +36,12 @@ class ReceitaController {
     } else {
       try {
         await receitaSchema.create(novaReceita);
-        response.status(201).json(novaReceita);
+
+        const ReceitaCriada = await receitaSchema.findOne({
+          nomeReceita: nomeReceita,
+      });
+
+        response.status(201).json(ReceitaCriada);
       } catch (error) {
         response.status(400).json(error);
       }

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatDividerModule} from '@angular/material/divider';
 import { MatExpansionModule} from '@angular/material/expansion';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 
 
 import { HeaderComponent } from './components/template/header/header.component';
@@ -33,6 +36,7 @@ import { UsuarioCadastrarComponent } from './components/views/usuarios/cadastrar
 import { ReceitaListarComponent } from './components/views/receitas/listar/listar.component';
 import { ReceitaCadastrarComponent } from './components/views/receitas/cadastrar/cadastrar.component';
 import { ReceitaDetalhesComponent } from './components/views/receitas/detalhes/detalhes.component';
+import { PaisDetalhesComponent } from './components/views/paises/detalhes/detalhes.component';
 
 
 @NgModule({
@@ -46,7 +50,8 @@ import { ReceitaDetalhesComponent } from './components/views/receitas/detalhes/d
          UsuarioCadastrarComponent,
          ReceitaListarComponent,
          ReceitaCadastrarComponent,
-         ReceitaDetalhesComponent
+         ReceitaDetalhesComponent,
+         PaisDetalhesComponent
 
   ],
   imports: [
@@ -54,6 +59,7 @@ import { ReceitaDetalhesComponent } from './components/views/receitas/detalhes/d
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -68,6 +74,7 @@ import { ReceitaDetalhesComponent } from './components/views/receitas/detalhes/d
     MatGridListModule,
     MatDividerModule,
     MatExpansionModule,
+    MatAutocompleteModule
    
     
   ],

@@ -4,10 +4,36 @@
         <div class="receita">
           <mat-card>
             <mat-card-content>
+
+              
               <div class="conteudo-receita">
-              <div class="conteudo-receita">                  
+                <form class="example-form">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nome do Pais</mat-label>
+                    <input type="text"
+                           placeholder="Digite o Nome do Pais"
+                           aria-label="Number"
+                           matInput
+                           [formControl]="myControl"                         
+                           [matAutocomplete]="auto">
+                    <mat-autocomplete autoActiveFirstOption 
+                    #auto="matAutocomplete">
+                      <mat-option 
+                      *ngFor="let option of filteredOptions | async" [value]="option._id"
+                      
+                      
+                      >                        
+                        <img class="example-option-img" aria-hidden [src]="option.urlFotoPais" height="25">
+                        <span>{{option.nomePais}}</span> |
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                </form>
+              </div>
+
+              <div class="conteudo-receita"> 
                 <mat-form-field>
-                  <mat-label for="nomeReceita">Nome da Receita</mat-label>
+                  <mat-label for="nomeReceita">Nome da Receita </mat-label>
                   <input matInput placeholder="nomeReceita" type="text" name="nomeReceita" [(ngModel)]="nomeReceita" />
                 </mat-form-field>
               </div> 
@@ -39,8 +65,7 @@
                   <input matInput placeholder="rendimento" type="text" name="rendimento" [(ngModel)]="rendimento" />
                 </mat-form-field>
               </div> 
-                    
-              </div>             
+                     
             </mat-card-content>
           </mat-card>
         </div>             

@@ -1,5 +1,5 @@
 export class Receita {
-    _id? : string;
+    _id! : string;
     nomeReceita! : String;
     ingrediente! : String;
     modoPreparo! : String;
