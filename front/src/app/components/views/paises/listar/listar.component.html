@@ -3,9 +3,22 @@
     <mat-card class="pais" >
       <mat-card-title> {{ pais.nomePais }} </mat-card-title>
       <mat-card-subtitle>{{ pais.nomePais }}</mat-card-subtitle>
-      <a href="#">
+
+      <div *ngIf="pais.urlFotoPais == null; then thenBlock else elseBlock"></div>
+      
+      <ng-template #thenBlock>
+        <a href="#">
           <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="" width="100" height="200">
-      </a>
+        </a>
+      </ng-template>
+      
+      <ng-template #elseBlock>
+        <a href="#">
+          <img mat-card-image src="{{pais.urlFotoPais}}" alt="" width="100" height="200">
+        </a>
+      </ng-template>
+      
+     
       <mat-card-content>
       </mat-card-content>
       <mat-card-actions> 

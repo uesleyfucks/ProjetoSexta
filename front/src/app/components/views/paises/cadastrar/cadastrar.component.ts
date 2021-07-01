@@ -12,17 +12,20 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 export class CadastrarComponent implements OnInit {
 
   nomePais!: string;
+  urlFotoPais!: string;
 
   //constructor(private service: PaisService) { }
   constructor(private service: PaisService, private router: Router, private snack: MatSnackBar) { }
 
   ngOnInit(): void {
     this.nomePais = "";
+    this.urlFotoPais = "";
   }
 
   cadastrar(): void {
     let pais = new Pais();
     pais.nomePais = this.nomePais;
+    pais.urlFotoPais = this.urlFotoPais;
     this.service.cadastrar(pais).subscribe((pais) =>{
       console.log(pais);
       this.snack.open("Pais cadastrado", "", {

@@ -15,8 +15,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {  MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule} from '@angular/material/grid-list';
 import { MatDividerModule} from '@angular/material/divider';
+import { MatExpansionModule} from '@angular/material/expansion';
 
 
 import { HeaderComponent } from './components/template/header/header.component';
@@ -31,6 +32,7 @@ import { UsuarioCadastrarComponent } from './components/views/usuarios/cadastrar
 
 import { ReceitaListarComponent } from './components/views/receitas/listar/listar.component';
 import { ReceitaCadastrarComponent } from './components/views/receitas/cadastrar/cadastrar.component';
+import { ReceitaDetalhesComponent } from './components/views/receitas/detalhes/detalhes.component';
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { ReceitaCadastrarComponent } from './components/views/receitas/cadastrar
          UsuarioListarComponent,
          UsuarioCadastrarComponent,
          ReceitaListarComponent,
-         ReceitaCadastrarComponent
+         ReceitaCadastrarComponent,
+         ReceitaDetalhesComponent
 
   ],
   imports: [
@@ -63,7 +66,9 @@ import { ReceitaCadastrarComponent } from './components/views/receitas/cadastrar
     MatTableModule,
     MatSnackBarModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule,
+   
     
   ],
   providers: [],

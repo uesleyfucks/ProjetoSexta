@@ -6,6 +6,10 @@ const paisSchema = new Schema(
       type: String,
       required: [true, "O campo nome do País é obrigatório!!!"],
     },
+    urlFotoPais: {
+      type: String,
+      required: [true, "O campo url foto do País é obrigatório!!!"],
+    },
     receitas : [],
   },
   {

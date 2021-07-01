@@ -8,6 +8,7 @@ import { UsuarioListarComponent } from './components/views/usuarios/listar/lista
 
 import { ReceitaCadastrarComponent } from './components/views/receitas/cadastrar/cadastrar.component';
 import { ReceitaListarComponent } from './components/views/receitas/listar/listar.component';
+import { ReceitaDetalhesComponent } from './components/views/receitas/detalhes/detalhes.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,11 @@ const routes: Routes = [
   {
     path:'receitas/cadastrar',
     component: ReceitaCadastrarComponent
+  }
+  ,
+  {
+    path:'receitas/detalhes/:id',
+    component: ReceitaDetalhesComponent
   }
 ];
 
