@@ -20,6 +20,8 @@ import { MatGridListModule} from '@angular/material/grid-list';
 import { MatDividerModule} from '@angular/material/divider';
 import { MatExpansionModule} from '@angular/material/expansion';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -37,6 +39,10 @@ import { ReceitaListarComponent } from './components/views/receitas/listar/lista
 import { ReceitaCadastrarComponent } from './components/views/receitas/cadastrar/cadastrar.component';
 import { ReceitaDetalhesComponent } from './components/views/receitas/detalhes/detalhes.component';
 import { PaisDetalhesComponent } from './components/views/paises/detalhes/detalhes.component';
+import { UsuarioLoginComponent } from './components/views/usuarios/login/login.component';
+import { ReceitaDeletarComponent } from './components/views/receitas/deletar/deletar.component';
+import { DeletarReceitaComponent } from './components/views/paises/deletarreceita/deletarreceita.component';
+import { PaisDeletarComponent } from './components/views/paises/deletar/deletar.component';
 
 
 @NgModule({
@@ -51,7 +57,11 @@ import { PaisDetalhesComponent } from './components/views/paises/detalhes/detalh
          ReceitaListarComponent,
          ReceitaCadastrarComponent,
          ReceitaDetalhesComponent,
-         PaisDetalhesComponent
+         PaisDetalhesComponent,
+         UsuarioLoginComponent,
+         ReceitaDeletarComponent,
+         DeletarReceitaComponent,
+         PaisDeletarComponent
 
   ],
   imports: [
@@ -74,7 +84,9 @@ import { PaisDetalhesComponent } from './components/views/paises/detalhes/detalh
     MatGridListModule,
     MatDividerModule,
     MatExpansionModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatSelectModule,
+    MatSlideToggleModule
    
     
   ],

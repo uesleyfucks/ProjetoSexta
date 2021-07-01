@@ -11,10 +11,11 @@
           <!-- {{ receita.modoPreparo }} -->
         </mat-card-content>
         <mat-card-actions> 
+          <a mat-button color="primary" routerLink="/receitas/deletar/{{ receita._id }}"> Excluir </a>
             <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button> 
+
             <a href="/receitas/detalhes/{{ receita._id }}">
-              <button mat-button color="primary">Detalhes</button> 
+              <button mat-button color="secundary">Detalhes</button> 
             </a>
         </mat-card-actions>
       </mat-card>

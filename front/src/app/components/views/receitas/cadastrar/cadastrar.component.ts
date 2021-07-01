@@ -21,7 +21,9 @@ export class ReceitaCadastrarComponent implements OnInit {
   modoPreparo! : String;
   tempoPreparo! : String;
   rendimento! : String;
-  idpais? :string;
+  idpais! :string ;
+
+  
 
   paises : Pais[] = [];
   
@@ -83,7 +85,7 @@ export class ReceitaCadastrarComponent implements OnInit {
       });
 
       
-    this.idpais = "60de0ac1843a9d3648b6b0eb";
+    //this.idpais = "60de0ac1843a9d3648b6b0eb";
     
     this.servicePais.cadastrarReceita(this.idpais,receita._id).subscribe((pais) =>{
       console.log(pais);

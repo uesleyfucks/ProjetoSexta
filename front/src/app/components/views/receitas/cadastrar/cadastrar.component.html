@@ -1,12 +1,23 @@
+
+
 <mat-card>
     <mat-card-title> Nova Receita </mat-card-title>
     <mat-card-content>  
         <div class="receita">
           <mat-card>
-            <mat-card-content>
-
-              
+            <mat-card-content>    
               <div class="conteudo-receita">
+            <mat-form-field appearance="fill">
+              <mat-label>Selecione o pais</mat-label>
+              <mat-select [(ngModel)]="idpais" name="idpais">
+                <mat-option *ngFor="let pais of paises" [value]="pais._id">
+                  {{pais.nomePais}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field> 
+          </div>
+
+              <!-- <div class="conteudo-receita">
                 <form class="example-form">
                   <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Nome do Pais</mat-label>
@@ -20,37 +31,29 @@
                     #auto="matAutocomplete">
                       <mat-option 
                       *ngFor="let option of filteredOptions | async" [value]="option._id"
-                      
-                      
                       >                        
                         <img class="example-option-img" aria-hidden [src]="option.urlFotoPais" height="25">
-                        <span>{{option.nomePais}}</span> |
+                        <span>{{option.nomePais}} </span>
                       </mat-option>
                     </mat-autocomplete>
                   </mat-form-field>
                 </form>
-              </div>
+              </div> -->
 
-              <div class="conteudo-receita"> 
-                <mat-form-field>
-                  <mat-label for="nomeReceita">Nome da Receita </mat-label>
-                  <input matInput placeholder="nomeReceita" type="text" name="nomeReceita" [(ngModel)]="nomeReceita" />
-                </mat-form-field>
-              </div> 
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label for="nomeReceita">Nome da Receita </mat-label>
+                <textarea matInput placeholder="nomeReceita" name="nomeReceita" [(ngModel)]="nomeReceita" ></textarea>
+              </mat-form-field>
 
-              <div class="conteudo-receita">                  
-                <mat-form-field>
-                  <mat-label for="ingrediente">Ingredientes</mat-label>
-                  <input matInput placeholder="ingrediente" type="text" name="ingrediente" [(ngModel)]="ingrediente" />
-                </mat-form-field>
-              </div> 
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label for="ingrediente">Ingredientes</mat-label>
+                <textarea matInput placeholder="ingrediente" type="text" name="ingrediente" [(ngModel)]="ingrediente"></textarea>
+              </mat-form-field>
 
-              <div class="conteudo-receita">                  
-                <mat-form-field>
-                  <mat-label for="modoPreparo">Modo de Preparo</mat-label>
-                  <input matInput placeholder="modoPreparo" type="text" name="modoPreparo" [(ngModel)]="modoPreparo" />
-                </mat-form-field>
-              </div> 
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label for="modoPreparo">Modo de Preparo</mat-label>
+                <textarea matInput placeholder="modoPreparo" type="text" name="modoPreparo" [(ngModel)]="modoPreparo" ></textarea>
+              </mat-form-field>
 
               <div class="conteudo-receita">                  
                 <mat-form-field>

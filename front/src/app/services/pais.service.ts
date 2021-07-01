@@ -17,10 +17,22 @@ export class PaisService {
       return this.http.get<Pais[]>(`${this.baseURL}pais/listar-pais/`);
     }
 
+    deletar(pais: Pais): Observable<Pais>{
+      console.log(pais._id);
+      return this.http.delete<Pais>(`${this.baseURL}pais/deletar-pais/`+pais._id);
+    }
+
     detalhes(pais: Pais): Observable<Pais>{
       console.log(pais._id);
       return this.http.get<Pais>(`${this.baseURL}pais/listar-pais/`+pais._id);
     }
+
+    deletarReceita(idReceita: string,idPais:string): Observable<Pais>{
+      var URL! :string;
+      URL = this.baseURL+ 'pais/remover-receita/'+idReceita + `/`+ idPais;
+      return this.http.post<Pais>(URL,null);      
+    }
+
 
     cadastrar(pais: Pais):Observable<Pais>{
       return this.http.post<Pais>(`${this.baseURL}pais/cadastrar-pais/`, pais);

@@ -20,8 +20,13 @@ export class ReceitaService {
       console.log(receita._id);
       return this.http.get<Receita>(`${this.baseURL}receita/listar-receita/`+receita._id);
     }
+    deletar(receita: Receita): Observable<Receita>{
+      console.log(receita._id);
+      return this.http.delete<Receita>(`${this.baseURL}receita/deletar-receita/`+receita._id);
+    }
 
     cadastrar(receita: Receita):Observable<Receita>{
       return this.http.post<Receita>(`${this.baseURL}receita/cadastrar-receita/`, receita);
     }
+   
 }

@@ -3,6 +3,7 @@ import { Receita } from 'src/app/models/Receita';
 import { ReceitaService } from 'src/app/services/receitas.service';
 import { Router, ActivatedRoute, ParamMap  } from "@angular/router";
 import { Observable} from 'rxjs';
+import { Pais } from 'src/app/models/Pais';
 
 
 
@@ -15,6 +16,7 @@ export class ReceitaDetalhesComponent implements OnInit {
 
   panelOpenState = true;  
   receita = new Receita();
+  pais = new Pais();
   
   //id!:string;
   
@@ -30,6 +32,7 @@ export class ReceitaDetalhesComponent implements OnInit {
     this.service.detalhes(receita).subscribe((receita) => {
       //console.log(paises);
       this.receita = receita;
+      
     });
   }
 

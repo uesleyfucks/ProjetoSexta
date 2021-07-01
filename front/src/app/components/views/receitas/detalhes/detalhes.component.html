@@ -1,4 +1,12 @@
-<mat-card>{{ receita.nomeReceita }}</mat-card>
+<mat-card-content>
+  {{ pais.nomePais }}
+  <img class="example-option-img" aria-hidden [src]="pais.urlFotoPais" height="25">
+</mat-card-content>
+
+<mat-card>{{ receita.nomeReceita }}   
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <mat-icon>favorite</mat-icon>
+</button></mat-card>
 <mat-accordion >
   <mat-expansion-panel (opened)="panelOpenState = true"
   (closed)="panelOpenState = false">
@@ -10,7 +18,11 @@
           
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>{{ receita.ingrediente }}</p>
+      
+      <p>
+        {{ receita.ingrediente }}
+      </p>
+
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
